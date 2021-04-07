@@ -1,0 +1,87 @@
+1. A database is a systematic collection of data ,in simple terms it stores data of a related entity.
+   DB is used to store data permanently , it is used mainly since the storing , accessing , manipulating and retrieving of data is made simpler.
+2. Database Management System (DBMS) is a software for storing and retrieving users data which also eases the accesing and manipulation of data .
+   RDBMS is system which stores data in a proper format in form of tables and provides visual access to the user.
+	Differences:
+  i] DBMS applications store data as file ,whil RDBMS applications store data in a tabular form.
+  ii]DBMS is meant to be for small organization and deal with small data. it supports single user, where as
+     RDBMS is designed to handle large amount of data. it supports multiple users.
+  iii]Normalization is not present in DBMS , which can be seen in RDBMS. 
+  iv]Examples of DBMS are file systems, xml etc , while example of RDBMS are mysql, postgre, sql server, oracle etc.
+
+3.SQL - stands for structured query language is a computer domain-specific language meant for managing data in an RDBMS.
+	It is widely used for addding,accesing and managing of data because of its proven reliability and flexibilty.
+
+4. JDBC -Java Database Connectivity is basically an API which connects Java application to db.
+Steps in JDBC :
+	I] Load and Register the driver. i.e class.forName("com.mysql.jdbc.driver");
+	ii]Establish Connection with the Database. i.e Connection con = DriverManager.getConection();
+	iii]Create Statement or a platform to operate the query . Statement statement = con.createStatement();
+	iv] Create ResultSet to execute query. ResultSet rs = preparedStatement.executeQuery();
+	v] Close all the connection.
+5. OOPS- Its an approach of programmming , which refers to object oriented programming language deals with classes and objects.
+	i}Encapsulation - Binding data variables and methods into single block so that it is accessible within that class only. Ex- Capsules which protects
+	the medicine inside it.
+        ii}Inheritance - It is type of 'is a ' relationship , where the qualities of super/parent/base class is inherited into sub/child/derived class.
+		syntax : Class Utensils{
+			-------  }
+			Class Spoon extends Utensils{
+			-----
+			}
+	ex: Property inherited from father to son.
+	iii}Polymorphism : A function/entity behaving differently at different instance of time .
+	syntax : class Sum{
+		void add(int a , int b){-----}
+		void add(int a , int b , int c){------}
+		void add(double a , double b){}
+		}
+	ex: Ghd behaving as intern in Wolken , as student in MCE, Hassan , as a Cricketer in stadium etc...
+	iv}Abstraction : Hiding the internal functionality details and only provide required implementation to the user with the help of interface to achieve loose coupling.
+		ex:ATM 
+	syntax: public void sum(int a int b){
+	c = a+b;
+	return c;
+	}
+	main {
+	sum(4,5);
+	}
+6.RunTime Polymorphism - In this process overriden method is called through reference  variable of a super class. ex method overriding, also called as dynamic binding or
+  upcasting: class a{}
+             class b extends a{}
+             A a=new b();
+  Compile time polymorphism: it is used to achieve method overlaoding and tightcoupling, also called as static binding.
+
+7.A constructor in Java is a special method that is used to initialize objects. The constructor is called when an object of a class is created.
+  Types construction i]Default - syntax : ClassName(){---};
+		     ii] Parameterised - syntax : ClassName( arguments){----};
+	Chaining of constructor refers to calling one constructor from other using 'this' or 'super' keyword.
+
+8. Mysql is a database management that allows us to manage relational databases.
+    It makes the creation accessing, modification ,deletion operation simpler and more flexible.
+
+9. CREATE SCHEMA Wolken;
+   create table wolken.movie_details(
+	id int primary key not null,
+	title varchar(100),
+	category varchar(100),
+	language varchar(100));
+   Create table wolke.movie_member(
+	id int primary key not null;
+	first_name varchar(45);
+	last_name varchar(45);
+	movie_id int ;
+	age int ;
+	constraint movie_id foriegn key (movie_id) references movies_details(id )
+);
+10. insert into movie_members () values (1 , 'Adam', 'Smith', 1 , 20),(2,'Ravi','Kumar',2, 19)(3 , 'susan', 'davidson',5,17 ),(4, 'jenny','adriana',8,21),(6,'lee','pong',4,18),(7,'rakesh','kanna',3,22),
+ (9,'praveen','rathod',5,22),(10, 'rohan','patil',1,23);
+  insert into movie_details () values (1 , 'kgf','action','kannada'),(2,''safe house(2012)',action','english'),(3,'dil bechara','romance','hindhi'), (4,''safe house(2012),'action','english')
+(5,'3 IDIOTS','comedy drama','hindhi'),(6,'Chhello divas','comedy ','gujurathi'),(8,'safe','action','english');
+
+11. selet * from movie_member left outer join movie_details on movie_member.movie_id=movie_details.id;
+12. selet * from movie_member right join movie_details on movie_member.movie_id=movie_details.id;
+13.  selet * from movie_member join movie_details on movie_member.movie_id=movie_details.id where movie_details.title = '3-idiots';
+14. selet * from movie_member join movie_details on movie_member.movie_id=movie_details.id where movie_details.title = '3-idiots';
+15. selet * from movie_member inner join movie_details on movie_member.movie_id=movie_details.id;
+16.  selet * from movie_member right outer join movie_details on movie_member.movie_id=movie_details.id 
+17. selet * from movie_member left outer join movie_details on movie_member.movie_id=movie_details.id union selet * from movie_member right outer join movie_details on movie_member.movie_id=movie_details.id ;
