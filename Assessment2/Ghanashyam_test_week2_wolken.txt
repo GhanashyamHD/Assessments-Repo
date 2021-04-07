@@ -1,0 +1,100 @@
+1. Both trainer are different.
+2. Exception is an event which gets triggered in JVM because of abnormal conditions which eventually results in program terminating abruptly.
+  There are mainly two types of exception :
+	1)Checked - (Compile time Exception)
+		-Class not found 
+		-SQLException
+		-IOException
+		-FilesNotFound 
+		-ParseException
+	2)Unchecked-(Run time Exception)
+		-NumberFormat
+		-Arithmetic
+		-NullPointer
+		-ArrayIndexOutOfBound
+   Ways of handling Exception:
+   1) try- catch block
+    ex : 
+	int i = 100 ,b =0;
+	try{
+		int c = i/b;
+	}
+	catch(ArithmeticException e){
+		System.out.println(e);
+	}
+  The other ways of handling is by including finally block and by multiple catch block and by using throws keyword to specify the exception.
+
+3.Custom Exceptions are the user defined exception which helps to customize the exception according to needs of the user.
+ Ways of handling Custom Exception:
+ 	1)User-checked exception - if the defined exception extends exception.
+	2)User - unchecked exception - if the defined exception extends runtime exception.
+      ex : 
+		class Invalid extends Exception{
+		Invalid(String s){
+		super(s);
+} 		
+}
+	class TestCE{
+	static void validate(int age) throws Invalid{
+	if(age < 18)
+	throw new Invalid("not valid");	
+	else
+	System.out.println("valid");
+}
+	public static void main(String args[]){
+	try{
+	validate(10);
+}catch(Exception e){
+	System.out.println(e);
+}
+}
+}
+
+4.Encapsulation refers to binding of data with its methods , it restricts or hides the data so that it cannot be accessed from other class.
+	Rules:
+		-Declare all variables as private.
+		-Provide public getter and setter methods to view the values.
+5.Polymorphism is the ability of the object to take any forms.
+	Types of Polymorphism :
+		1)Compile time Polymorphisms - ex method overloading 
+		- ex: public class Add{
+			int add(int a , int b){
+			int c = a+b;
+}
+		int add(int a ,int b ,int c){ int d = a+b+c}	
+		double add(double a , double b){double c = a+b}		
+}
+		2) Run time polymorphisms - method overriding.
+		ex - public String toString(String s){
+			return "message";
+}
+
+6.Method Overloading - Methods with same name but different type or different number of parameters.
+ex:public class Add{
+			int add(int a , int b){
+			int c = a+b;
+}
+		int add(int a ,int b ,int c){ int d = a+b+c}	
+		double add(double a , double b){double c = a+b}		
+}
+
+7.Method Overriding - An example of Run time polymorphism which has same method name and parameter type/number , but differ in implementation.
+ex: public String toString(Sring s){
+			return "message";
+
+8.Here the main method is overloaded , the JVM calls the original main method .
+output- X-Workz
+
+9.Institute provides training.
+
+10.error- class cannot implement another class.
+
+11. Abstraction hiding the internal functionality and only presenting required implementation.
+ There are two ways to achieve abstraction :
+ 	-using interfaces
+	-using abstract classes.
+
+12. Intialization can be done in two ways :
+	Constructor initialization .
+	Setter initialization.
+
