@@ -1,0 +1,126 @@
+What is an Object?
+An object is an instance or a copy of class which is used to invoke/access the elements(methods or/ and variables) of
+the same class. (It can also be percieved as a variable of type class.)
+
+What is a Class?
+A class is a bluprint or a prototype from which objects are created.
+
+What is variables? why we use variables?
+Variables can be refered as the containers that stores data values. There are four types of Variables 1)Static 2)Local 
+3)Instance/Global 4)Parameter . Variables are used to store information which is required by the Java program to perform 
+the assigned task , it is basically a name given to a memory location which stores a particular value.
+
+What are instance variables?
+Variables declared inside the class and outside the main method/constructor/block without the static keyword.
+They are visible for all methods,constructor,blocks in a class.
+
+What is a static variable?
+Static variables are declared within the class but outside the main method/constructor/block with a static keyword.Their 
+scope is throughout the program.
+
+
+What is the difference between class variable and instance variable?
+1) Both class and instance variables are declared within the class outside the main method , but class variables are declared
+with static keyword while instance variables are not declared with static keyword.
+2)Instance variables are created when the object is created and destroyed when the object is destroyed, while class variables
+are created when the program starts and is destroyed when the program stops.
+3)Instance variables can be accessed directly by calling the variable name inside the class. However, within static methods 
+(when instance variables are given accessibility), they should be called using the fully qualified name. ObjectReference.VariableName.
+while Static variables can be accessed by calling with the class name ClassName.VariableName.
+
+How will you create an object? with example?
+An object is created by creating a reference variable of type class i.e a variable declaration with a variable name with an object type.
+The 'new' keyword is used, followed by a call to a constructor. This call initializes the new object.
+example :
+	public class Car{
+   public Car(String name) {
+      // This constructor has one parameter, name.
+      System.out.println("Passed Name is :" + name );
+   }
+
+   public static void main(String []args) {
+      // Following statement would create an object myCar
+      Car myCar = new Car( "Tesla" );
+   }
+}
+
+What is a method?
+A method is a set od code grouped together to perform a certain task used to achieve code reusabilty.
+
+what is method overloading?  
+Methods having same name but different type or number of arguments.
+
+Practical
+1)method overloading
+
+class Adder{  
+static int add(int a,int b)
+{
+return a+b;
+}  
+static int add(int a,int b,int c)
+{
+return a+b+c;
+} 
+static double add(double a, double b)
+{
+return a+b;
+} 
+}  
+class TestOverloading1{  
+public static void main(String[] args){  
+System.out.println(Adder.add(11,11));  
+System.out.println(Adder.add(11,11,11));  
+System.out.println(Adder.add(12.3,12.6));
+}
+}  
+
+2)print month of year
+
+class Month
+{
+	public static void main(String a[])
+{
+	int b =5 ;
+	switch(b)
+{
+	case 1: System.out.println("Jan");
+		break;
+	case 2: System.out.println("Feb");
+		break;
+	case 3: System.out.println("March");
+		break;
+	case 4 System.out.println("Apr");
+		break;
+	case 5: System.out.println("May");
+		break;
+	case 6: System.out.println("Jun");
+		break;
+	case 7: System.out.println("Jul");
+		break;
+	case 8: System.out.println("Aug");
+		break;
+	case 9: System.out.println("Sep");
+		break;
+	case 10: System.out.println("oct");
+		break;
+	case 11: System.out.println("Nov");
+		break;
+	case 12: System.out.println("Dec");
+		break;
+	default: System.out.println("Jan");
+	
+}
+}
+}
+3)factorial 
+	class Factorial{  
+ public static void main(String args[]){  
+  int i,fact=1;  
+  int number=5;
+  for(i=1;i<=number;i++){    
+      fact=fact*i;    
+  }    
+  System.out.println("Factorial of "+number+" is: "+fact);    
+ }  
+}  
