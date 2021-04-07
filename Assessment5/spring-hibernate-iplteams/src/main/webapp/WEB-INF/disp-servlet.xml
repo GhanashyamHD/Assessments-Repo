@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=" http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	
+<!--   <bean id = "ref" class = "com.wolken.wolkenapp.bean.InstagramBean">
+ <property name="instaId" value ="wolken_software"></property>
+ <property name="noOfposts" value ="23"></property>
+ <property name="memes" ref="mm"></property>
+
+</bean>
+<bean id = "mm" class ="com.wolken.wolkenapp.bean.MemesBean">
+<constructor-arg value ="CIStheta" type ="java.lang.String"></constructor-arg>
+<constructor-arg value ="sci-fic" type ="java.lang.String"></constructor-arg>
+<constructor-arg value ="1234" type ="int"></constructor-arg>
+
+</bean> -->
+<context:component-scan base-package="com.wolken.wolkenapp"></context:component-scan> 
+<bean id ="sessionFactory" class =" org.springframework.orm.hibernate5.LocalSessionFactoryBean" >
+<property name="dataSource" ref ="basicDataSource"></property>
+	<property name="annotatedClasses">
+		<list>
+		<value>com.wolken.wolkenapp.dto.TeamDTO</value>
+		</list>
+	</property>
+</bean>
+<bean id="basicDataSource"
+class=" org.apache.tomcat.dbcp.dbcp2.BasicDataSource">
+<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+<property name="url" value="jdbc:mysql://localhost:3306/wolken"></property>
+<property name="username" value="root"></property>
+<property name="password" value="Leela12345$$"></property>
+
+
+
+
+
+</bean>
+
+
+
+</beans>
